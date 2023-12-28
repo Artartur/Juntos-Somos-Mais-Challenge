@@ -1,0 +1,23 @@
+.search__container {
+  align-items: center;
+  background: white;
+  border: none;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  svg {
+    margin-left: 10px;
+  }
+  &-input {
+    align-items: center;
+    width: 468px;
+    height: 48px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px;
+    padding: 0 10px;
+    &:focus {
+      border: none;
+    }
+  }
+}
