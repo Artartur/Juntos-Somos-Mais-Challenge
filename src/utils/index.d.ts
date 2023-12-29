@@ -1,4 +1,4 @@
-interface IAppData {
+interface ICardData {
     cell: string;
     dob: { age: number; date: string };
     email: string;

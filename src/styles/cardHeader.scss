@@ -1,0 +1,27 @@
+.cardHeader__container {
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 838px;
+
+  div {
+    margin-right: 20px;
+    label {
+      font-size: 14px;
+    }
+    select {
+      background: none;
+      border: none;
+      outline: none;
+    }
+  }
+  p {
+    margin-left: 20px;
+  }
+}
