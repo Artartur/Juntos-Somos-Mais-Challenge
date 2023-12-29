@@ -2,7 +2,7 @@
   align-items: center;
   background-color: #b0b0b0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 96px;
   width: 100vw;
 
@@ -16,8 +16,8 @@
   &-left {
     align-items: center;
     display: flex;
-    justify-content: space-around;
-    div {
+    justify-content: space-evenly;
+    &-button {
       background-color: gray;
       border-radius: 32px;
       height: 16px;

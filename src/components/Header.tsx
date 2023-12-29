@@ -13,10 +13,10 @@ export default function Header({ onChange, value }: IHeader) {
       <div>
         <img src={Logo} alt="juntos somos mais logo" />
       </div>
-      <Search onChange={onChange} value={value} />
       <div className="header__container-left">
-        <div></div>
-        <div></div>
+        <Search onChange={onChange} value={value} />
+        <div className="header__container-left-button"></div>
+        <div className="header__container-left-button"></div>
       </div>
     </header>
   );
