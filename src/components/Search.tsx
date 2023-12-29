@@ -8,7 +8,7 @@ interface ISearch {
 export default function Search({ onChange, value }: ISearch) {
   return (
     <div className="search__container">
-      <IoMdSearch size={20} />
+      <IoMdSearch size={20} color="black"/>
       <input
         className="search__container-input"
         name="search"
