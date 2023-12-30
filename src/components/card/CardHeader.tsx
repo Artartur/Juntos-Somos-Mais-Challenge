@@ -14,7 +14,7 @@ export default function CardHeader({
   return (
     <div className="cardHeader__container">
       <p>
-        Showing {startItem} of {endItem}
+        Showing {startItem} of {endItem} items
       </p>
       <div>
         <label htmlFor="filter">Order by: </label>
