@@ -11,7 +11,7 @@
     &-data {
       align-items: center;
       border: 1px solid #e5e5e5;
-        border-radius: 4px;
+      border-radius: 4px;
       display: flex;
       height: 310px;
       justify-content: center;
@@ -33,6 +33,7 @@
             line-height: 16px;
             span {
               display: flex;
+              justify-content: center;
               p {
                 margin-left: 2px;
               }
