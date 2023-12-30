@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
 import Card from "../components/card/Card";
-import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 import CardHeader from "../components/card/CardHeader";
+import Header from "../components/Header";
+import Pagination from "../components/Pagination";
 interface IApp {
   results: ICardData[];
 }
@@ -24,6 +24,8 @@ function App() {
         .toLowerCase()
         .includes(search.toLowerCase())
     ) || [];
+
+  const startItem = Math.min(currentPage * itemsPerPage, filteredData.length);
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
@@ -46,29 +48,21 @@ function App() {
   return (
     <div style={{ overflowX: "hidden" }}>
       <Header onChange={(e) => setSearch(e.target.value)} value={search} />
-
       <CardHeader
-        endItem={data?.results.length as number}
+        endItem={filteredData.length}
         onChange={() => {}}
-        startItem={9}
+        startItem={startItem}
       />
 
       <Card filteredData={paginatedData} />
-      <div style={{ margin: 10, display: "flex", justifyContent: "center" }}>
-        <FaCircleChevronLeft
-          disabled={currentPage === 1}
-          color={currentPage === 1 ? "#E5E5E5" : "4A4A4A"}
-          onClick={() => handlePageChange(currentPage - 1)}
-          size={20}
-        />
-        <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <FaCircleChevronRight
-          disabled={currentPage === totalPages}
-          color="#4A4A4A"
-          onClick={() => handlePageChange(currentPage + 1)}
-          size={20}
-        />
-      </div>
+
+      <Pagination
+        currentPage={currentPage}
+        onClickNext={() => handlePageChange(currentPage + 1)}
+        onClickPage={(pageNumber) => handlePageChange(pageNumber)}
+        onClickPrev={() => handlePageChange(currentPage - 1)}
+        totalPages={totalPages}
+      />
     </div>
   );
 }
