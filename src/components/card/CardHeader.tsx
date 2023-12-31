@@ -2,7 +2,7 @@ import "../../styles/cardHeader.scss";
 
 interface ICardHeader {
   endItem: number;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: EventSelect;
   startItem: number;
 }
 

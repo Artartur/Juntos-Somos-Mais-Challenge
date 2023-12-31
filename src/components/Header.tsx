@@ -3,7 +3,7 @@ import Search from "./Search";
 import "../styles/header.scss";
 
 interface IHeader {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: EventInput;
   value: string;
 }
 
