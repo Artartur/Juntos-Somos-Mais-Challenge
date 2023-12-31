@@ -1,10 +1,6 @@
 import "../../styles/card.scss";
 
-interface ICard {
-  filteredData: ICardData[];
-}
-
-export default function Card({ filteredData }: ICard) {
+export default function Card({ filteredData }: IFilteredData) {
   const formatAddress = (fullAddress: string) => {
     const [street, number] = fullAddress.split(/\s+(.+)/);
     return number ? `${number}, ${street}`.replace(/\s*,\s*/, ", ") : street;
