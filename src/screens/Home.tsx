@@ -4,11 +4,12 @@ import Card from "../components/card/Card";
 import CardHeader from "../components/card/CardHeader";
 import Header from "../components/Header";
 import Pagination from "../components/Pagination";
+import "../styles/home.scss";
 interface IApp {
   results: ICardData[];
 }
 
-function App() {
+export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState<IApp>();
   const [search, setSearch] = useState("");
@@ -24,7 +25,6 @@ function App() {
         .toLowerCase()
         .includes(search.toLowerCase())
     ) || [];
-
   const startItem = Math.min(currentPage * itemsPerPage, filteredData.length);
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
@@ -46,25 +46,30 @@ function App() {
   }, []);
 
   return (
-    <div style={{ overflowX: "hidden" }}>
-      <Header onChange={(e) => setSearch(e.target.value)} value={search} />
-      <CardHeader
-        endItem={filteredData.length}
-        onChange={() => {}}
-        startItem={startItem}
-      />
+    <div className="home__container">
+      <div className="home__container-header">
+        <Header onChange={(e) => setSearch(e.target.value)} value={search} />
+      </div>
+      <div className="home__container-body">
+        <div className="home__container-body-sidebar"></div>
+        <div className="home__container-body-cards">
+          <CardHeader
+            endItem={filteredData.length}
+            onChange={() => {}}
+            startItem={startItem}
+          />
 
-      <Card filteredData={paginatedData} />
+          <Card filteredData={paginatedData} />
 
-      <Pagination
-        currentPage={currentPage}
-        onClickNext={() => handlePageChange(currentPage + 1)}
-        onClickPage={(pageNumber) => handlePageChange(pageNumber)}
-        onClickPrev={() => handlePageChange(currentPage - 1)}
-        totalPages={totalPages}
-      />
+          <Pagination
+            currentPage={currentPage}
+            onClickNext={() => handlePageChange(currentPage + 1)}
+            onClickPage={(pageNumber) => handlePageChange(pageNumber)}
+            onClickPrev={() => handlePageChange(currentPage - 1)}
+            totalPages={totalPages}
+          />
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
