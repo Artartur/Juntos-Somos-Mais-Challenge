@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../components/card/Card";
 import CardHeader from "../components/card/CardHeader";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Pagination from "../components/Pagination";
 import "../styles/home.scss";
@@ -69,6 +70,9 @@ export default function Home() {
             totalPages={totalPages}
           />
         </div>
+      </div>
+      <div className="home__container-footer">
+        <Footer />
       </div>
     </div>
   );
