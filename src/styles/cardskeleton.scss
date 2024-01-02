@@ -1,0 +1,62 @@
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+}
+
+.cardskeleton__container {
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  height: 310px;
+  justify-content: center;
+  text-align: center;
+  text-transform: capitalize;
+  width: 272px;
+  &-informations {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    justify-content: center;
+    width: 240px;
+
+    &-address {
+      p {
+        animation: blink 3s infinite;
+        background-color: rgb(207, 207, 207);
+        border-radius: 32px;
+        height: 12px;
+        margin-bottom: 26px;
+        width: 113px;
+      }
+    }
+    &-profile {
+      margin-bottom: 48px;
+      width: 100%;
+      h3 {
+        animation: blink 3s infinite;
+        background-color: rgb(207, 207, 207);
+        border-radius: 32px;
+        height: 16px;
+        margin: 0 auto;
+        width: 176px;
+      }
+      img {
+        animation: blink 3s infinite;
+        background-color: rgb(207, 207, 207);
+        border-radius: 50%;
+        height: 80px;
+        margin-bottom: 10px;
+        width: 80px;
+      }
+    }
+  }
+}
