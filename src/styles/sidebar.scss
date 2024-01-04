@@ -1,0 +1,43 @@
+.sidebar__container {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  height: 474px;
+  width: 273px;
+
+  &-state {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 27px;
+    text-align: start;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    &-moreOptions {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    div {
+      text-transform: capitalize;
+      div {
+        margin: 10px 0;
+        input {
+          height: 18px;
+          margin-right: 10px;
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
+.sidebar__container-large {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  height: 975px;
+  width: 273px;
+}
