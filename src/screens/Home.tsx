@@ -16,6 +16,7 @@ export default function Home() {
   const [data, setData] = useState<IApp>();
   const [search, setSearch] = useState("");
   const [selectedStates, setSelectedStates] = useState<string[]>([]);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
   const itemsPerPage = 9;
 
   const handlePageChange = (newPage: number) => {
@@ -24,6 +25,10 @@ export default function Home() {
 
   const handleSelectStateChange = (selectedState: string[]) => {
     setSelectedStates(selectedState);
+  };
+
+  const handleSortChange = (order: "asc" | "desc" | null) => {
+    setSortOrder(order);
   };
 
   const filteredData: ICardData[] =
@@ -39,11 +44,24 @@ export default function Home() {
           selectedStates.includes(result.location.state),
       ) || [];
 
-  const startItem = Math.min(currentPage * itemsPerPage, filteredData.length);
+  const sortedData = [...filteredData].sort((a, b) => {
+    const nameA = `${a.name.first} ${a.name.last}`;
+    const nameB = `${b.name.first} ${b.name.last}`;
 
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+    if (sortOrder === "asc") {
+      return nameA.localeCompare(nameB);
+    } else if (sortOrder === "desc") {
+      return nameB.localeCompare(nameA);
+    }
 
-  const paginatedData = filteredData.slice(
+    return 0;
+  });
+
+  const startItem = Math.min(currentPage * itemsPerPage, sortedData.length);
+
+  const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+
+  const paginatedData = sortedData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage,
   );
@@ -73,13 +91,12 @@ export default function Home() {
         </div>
         <div className="home__container-body-cards">
           <CardHeader
-            endItem={filteredData.length}
-            onChange={() => {}}
+            endItem={sortedData.length}
+            onSortChange={handleSortChange}
             startItem={startItem}
           />
 
           <Card filteredData={paginatedData} />
-
           <Pagination
             currentPage={currentPage}
             onClickNext={() => handlePageChange(currentPage + 1)}
