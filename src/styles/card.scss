@@ -5,6 +5,7 @@
   margin: 0 auto;
   width: 848px;
   &-content {
+    cursor: pointer;
     display: grid;
     gap: 10px;
     grid-template-columns: auto auto auto;
@@ -57,9 +58,18 @@
           }
         }
       }
+
+      &.selected {
+        border: 1px solid rgb(41, 100, 168);
+      }
+
+      &:hover {
+        border: 1px solid rgb(41, 100, 168);
+      }
     }
   }
-  &-skeleton{
+
+  &-skeleton {
     display: grid;
     gap: 10px;
     grid-template-columns: auto auto auto;

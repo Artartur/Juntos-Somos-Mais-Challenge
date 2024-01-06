@@ -1,0 +1,88 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cardModal__container {
+  animation: fadeIn 0.5s ease-in-out;
+  background-color: rgb(143, 161, 168);
+  border-radius: 4px;
+  border: 1px solid gray;
+  height: 450px;
+  position: absolute;
+  width: 835px;
+  &-content {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    button {
+      background-color: rgb(189, 189, 189);
+      border: 1px solid gray;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      height: 40px;
+      width: 40%;
+      &:hover {
+        background-color: rgb(177, 177, 177);
+      }
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    &-details {
+      align-items: center;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      height: 70%;
+      justify-content: space-evenly;
+      width: 80%;
+
+      &-profile,
+      &-register {
+        &-address,
+        &-contact,
+        &-date,
+        &-name {
+          text-transform: capitalize;
+          p {
+            &:first-child {
+              font-size: 20px;
+              margin: 20px 0;
+            }
+            &:last-child {
+              text-transform: none;
+            }
+          }
+        }
+
+        &-contact {
+          p {
+            text-transform: none;
+          }
+        }
+      }
+
+      &-register {
+        &-address {
+          p {
+            &:last-child {
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+    }
+  }
+}

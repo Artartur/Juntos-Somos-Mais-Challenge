@@ -1,13 +1,27 @@
 import { useEffect, useState } from "react";
-import "../../styles/card.scss";
 import CardSkeleton from "./CardSkeleton";
+import CardModal from "./CardModal";
+import "../../styles/card.scss";
 
 export default function Card({ filteredData }: IFilteredData) {
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(
+    null
+  );
+  const [showModal, setShowModal] = useState(false);
   const [skeleton, setSkeleton] = useState(true);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const formatAddress = (fullAddress: string) => {
     const [street, number] = fullAddress.split(/\s+(.+)/);
     return number ? `${number}, ${street}`.replace(/\s*,\s*/, ", ") : street;
+  };
+
+  const openModal = (index: number) => {
+    setShowModal(true);
+    setSelectedCardIndex(index);
   };
 
   const renderSkeletons = () => {
@@ -35,7 +49,13 @@ export default function Card({ filteredData }: IFilteredData) {
           {filteredData && (
             <div className="card__container-content">
               {filteredData?.map((result, index) => (
-                <div className="card__container-content-data" key={index}>
+                <div
+                  className={`card__container-content-data ${
+                    selectedCardIndex === index ? "selected" : ""
+                  }`}
+                  key={index}
+                  onClick={() => openModal(index)}
+                >
                   <div className="card__container-content-data-informations">
                     <div className="card__container-content-data-informations-profile">
                       <img
@@ -61,6 +81,12 @@ export default function Card({ filteredData }: IFilteredData) {
                   </div>
                 </div>
               ))}
+              {showModal && selectedCardIndex !== null && (
+                <CardModal
+                  closeModal={closeModal}
+                  selectedCardData={filteredData[selectedCardIndex]}
+                />
+              )}
             </div>
           )}
         </div>
