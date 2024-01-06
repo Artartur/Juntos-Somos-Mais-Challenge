@@ -41,3 +41,41 @@
   height: 975px;
   width: 273px;
 }
+
+@media (max-width: 1200px) {
+  .sidebar__container {
+    height: 350px;
+    width: 220px;
+  }
+  .sidebar__container-large {
+    height: 955px;
+    width: 220px;
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar__container {
+    height: 330px;
+    width: 180px;
+
+    &-state {
+      h3 {
+        font-size: 18px;
+      }
+
+      div {
+        div {
+          input {
+            height: 14px;
+            margin-right: 5px;
+            width: 14px;
+          }
+        }
+      }
+    }
+  }
+  .sidebar__container-large {
+    height: 975px;
+    width: 180px;
+  }
+}

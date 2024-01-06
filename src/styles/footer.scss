@@ -41,3 +41,29 @@
     }
   }
 }
+
+@media (max-width: 750px) {
+  .footer__container {
+    height: 230px;
+
+    &-logo {
+      margin-bottom: 5px;
+      img {
+        width: 140px;
+        margin-bottom: 8%;
+      }
+    }
+
+    &-social {
+      ul {
+        li {
+          height: 35px;
+          width: 35px;
+          svg {
+            width: 21px;
+          }
+        }
+      }
+    }
+  }
+}

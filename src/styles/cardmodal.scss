@@ -86,3 +86,73 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .cardModal__container {
+    height: 350px;
+    font-size: 10px;
+    width: 510px;
+
+    &-content {
+      button {
+        height: 35px;
+      }
+      h1 {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      &-details {
+        &-profile,
+        &-register {
+          &-address,
+          &-contact,
+          &-date,
+          &-name {
+            p {
+              margin: 5px 0;
+            }
+          }
+        }
+
+        &-register {
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .cardModal__container {
+    height: 350px;
+    font-size: 10px;
+    position: absolute;
+    width: 274px;
+    &-content {
+      button {
+        height: 35px;
+      }
+      h1 {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      &-details {
+        &-profile,
+        &-register {
+          &-address,
+          &-contact,
+          &-date,
+          &-name {
+            p {
+              margin: 5px 0;
+            }
+          }
+        }
+
+        &-register {
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}

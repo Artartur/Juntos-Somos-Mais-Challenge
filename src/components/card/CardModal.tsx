@@ -32,7 +32,7 @@ export default function CardModal({
       <div className="cardModal__container-content">
         <h1>More Infos</h1>
         <div className="cardModal__container-content-details">
-          <div className="cardModal__container-content-details=profile">
+          <div className="cardModal__container-content-details0-profile">
             <span className="cardModal__container-content-details-profile-name">
               <p>Basic Datas</p>
               <p>

@@ -24,7 +24,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 230px;
+    height: 260px;
     justify-content: center;
     width: 240px;
 
@@ -56,6 +56,61 @@
         height: 80px;
         margin-bottom: 10px;
         width: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cardskeleton__container {
+    height: 288px;
+    width: 250px;
+    &-informations {
+      height: 220px;
+      &-address {
+        p {
+          height: 16px;
+          margin-bottom: 15px;
+        }
+      }
+      &-profile {
+        margin-bottom: 10px;
+        h3 {
+          height: 18px;
+          margin: 15px auto;
+        }
+        img {
+          height: 80px;
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .cardskeleton__container {
+    height: 240px;
+    width: 280px;
+    &-informations {
+      height: 200px;
+      &-address {
+        p {
+          height: 10px;
+          margin-bottom: 15px;
+        }
+      }
+      &-profile {
+        margin-bottom: 5px;
+        h3 {
+          height: 12px;
+          margin: 10px auto;
+          width: 176px;
+        }
+        img {
+          height: 70px;
+          width: 70px;
+        }
       }
     }
   }

@@ -36,12 +36,12 @@ export default function Home() {
       .filter((result) =>
         `${result.name.first} ${result.name.last}`
           .toLowerCase()
-          .includes(search.toLowerCase()),
+          .includes(search.toLowerCase())
       )
       .filter(
         (result) =>
           selectedStates.length === 0 ||
-          selectedStates.includes(result.location.state),
+          selectedStates.includes(result.location.state)
       ) || [];
 
   const sortedData = [...filteredData].sort((a, b) => {
@@ -63,7 +63,7 @@ export default function Home() {
 
   const paginatedData = sortedData.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
   const getData = () => {
@@ -83,27 +83,32 @@ export default function Home() {
         <Header onChange={(e) => setSearch(e.target.value)} value={search} />
       </div>
       <div className="home__container-body">
-        <div className="home__container-body-sidebar">
-          <Sidebar
-            onSelectStateChange={handleSelectStateChange}
-            selectedStates={selectedStates}
-          />
+        <div className="home__container-body-title">
+          <h1>Members list</h1>
         </div>
-        <div className="home__container-body-cards">
-          <CardHeader
-            endItem={sortedData.length}
-            onSortChange={handleSortChange}
-            startItem={startItem}
-          />
+        <div className="home__container-body-content">
+          <div className="home__container-body-content-sidebar">
+            <Sidebar
+              onSelectStateChange={handleSelectStateChange}
+              selectedStates={selectedStates}
+            />
+          </div>
+          <div className="home__container-body-content-cards">
+            <CardHeader
+              endItem={sortedData.length}
+              onSortChange={handleSortChange}
+              startItem={startItem}
+            />
 
-          <Card filteredData={paginatedData} />
-          <Pagination
-            currentPage={currentPage}
-            onClickNext={() => handlePageChange(currentPage + 1)}
-            onClickPage={(pageNumber) => handlePageChange(pageNumber)}
-            onClickPrev={() => handlePageChange(currentPage - 1)}
-            totalPages={totalPages}
-          />
+            <Card filteredData={paginatedData} />
+            <Pagination
+              currentPage={currentPage}
+              onClickNext={() => handlePageChange(currentPage + 1)}
+              onClickPage={(pageNumber) => handlePageChange(pageNumber)}
+              onClickPrev={() => handlePageChange(currentPage - 1)}
+              totalPages={totalPages}
+            />
+          </div>
         </div>
       </div>
       <div className="home__container-footer">

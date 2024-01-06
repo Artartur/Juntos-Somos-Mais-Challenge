@@ -7,6 +7,7 @@
   button {
     align-items: center;
     background: none;
+    cursor: pointer;
     border: none;
     display: flex;
     margin: 0 10px;
@@ -19,6 +20,18 @@
     &.selected {
       border-bottom: 3px solid #9b9b9b;
       border-radius: 1px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .pagination__container {
+    button {
+      margin: 0 8px;
+    }
+
+    &-numbers {
+      padding: 0 4px;
     }
   }
 }

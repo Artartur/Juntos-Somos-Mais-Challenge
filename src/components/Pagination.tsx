@@ -30,7 +30,7 @@ export default function Pagination({
     <div className="pagination__container">
       <button disabled={currentPage === 1} onClick={onClickPrev}>
         <FaCircleChevronLeft
-          color={currentPage === 1 ? "#E5E5E5" : "4A4A4A"}
+          color={currentPage === 1 ? "#E5E5E5" : "#4A4A4A"}
           size={20}
         />
       </button>

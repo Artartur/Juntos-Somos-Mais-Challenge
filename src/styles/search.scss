@@ -21,3 +21,27 @@
     width: 438px;
   }
 }
+
+@media (max-width: 1200px) {
+  .search__container {
+    border-radius: 18px;
+
+    &-input {
+      height: 45px;
+      font-size: 14px;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .search__container {
+    border-radius: 10px;
+
+    &-input {
+      height: 40px;
+      font-size: 14px;
+      width: 200px;
+    }
+  }
+}
