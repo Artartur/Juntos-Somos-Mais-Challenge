@@ -1,10 +1,10 @@
-import "../styles/footer.scss";
 import Logo from "../assets/whiteLogo.svg";
 import {
   GrFacebookOption,
   GrInstagram,
   GrLinkedinOption,
 } from "react-icons/gr";
+import "../styles/footer.scss";
 
 export default function Footer() {
   return (

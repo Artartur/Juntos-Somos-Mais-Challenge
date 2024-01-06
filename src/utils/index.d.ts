@@ -12,7 +12,7 @@ interface ICardData {
   };
   name: { first: string; last: string; title: string };
   picture: { medium: string };
-  registered: { date: string };
+  registered: { age: number; date: string };
 }
 
 interface IFilteredData {
@@ -21,3 +21,4 @@ interface IFilteredData {
 
 type EventInput = (e: React.ChangeEvent<HTMLInputElement>) => void;
 type EventSelect = (e: React.ChangeEvent<HTMLSelectElement>) => void;
+type VoidReturn  = () => void;

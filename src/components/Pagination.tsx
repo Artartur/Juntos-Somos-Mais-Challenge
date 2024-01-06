@@ -3,9 +3,9 @@ import "../styles/pagination.scss";
 
 interface IPagination {
   currentPage: number;
-  onClickNext: () => void;
+  onClickNext: VoidReturn;
   onClickPage: (page: number) => void;
-  onClickPrev: () => void;
+  onClickPrev: VoidReturn;
   totalPages: number;
 }
 

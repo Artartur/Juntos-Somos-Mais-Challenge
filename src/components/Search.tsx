@@ -1,5 +1,5 @@
-import "../styles/search.scss";
 import { IoMdSearch } from "react-icons/io";
+import "../styles/search.scss";
 interface ISearch {
   onChange: EventInput;
   value: string;
